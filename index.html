@@ -351,7 +351,6 @@
     <div class="error-message" id="errorMessage"></div>
 
     <script type="module">
-      // Import the ElevenLabs client
       import { Conversation } from "https://cdn.skypack.dev/@elevenlabs/client";
 
       // Get DOM elements
@@ -362,10 +361,6 @@
 
       let conversation = null;
       let isConnected = false;
-
-      // Your ElevenLabs configuration
-
-      const AGENT_ID = "agent_01jxdnrec8f2x9nk0yxyqgpdzz";
 
       function showError(message) {
         errorMessage.textContent = message;
