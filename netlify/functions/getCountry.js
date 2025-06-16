@@ -3,13 +3,6 @@ exports.handler = async function (event) {
   const ELEVENLABS_API_KEY =
     "sk_ca703d8cad15206b7a5eb88b17a4c0ab57f714050d8eac07";
 
-  if (!country) {
-    return {
-      statusCode: 400,
-      body: JSON.stringify({ error: "Missing country name" }),
-    };
-  }
-
   try {
     const apiUrl = `https://api.elevenlabs.io/v1/convai/conversation/get-signed-url/${agent_id}`;
     const response = await fetch(apiUrl, {
