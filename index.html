@@ -364,7 +364,7 @@
       let isConnected = false;
 
       // Your ElevenLabs configuration
-      
+
       const AGENT_ID = "agent_01jxdnrec8f2x9nk0yxyqgpdzz";
 
       function showError(message) {
@@ -390,9 +390,7 @@
 
       async function getSignedUrl() {
         try {
-          const response = await fetch(
-            `/.netlify/functions/getCountry?agent_id=${AGENT_ID}`
-          );
+          const response = await fetch(`/.netlify/functions/getCountry`);
 
           if (!response.ok) {
             throw new Error(`Failed to get signed URL: ${response.statusText}`);
