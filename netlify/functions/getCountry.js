@@ -5,13 +5,6 @@ exports.handler = async function (event) {
 
   console.log(ELE_KEY);
 
-  if (!API_URI || !ELE_KEY) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: "Missing environment variables" }),
-    };
-  }
-
   try {
     const apiUrl = `${process.env.API_URI}/v1/convai/conversation/get-signed-url?agent_id=${agent_id}`;
     const response = await fetch(apiUrl, {
