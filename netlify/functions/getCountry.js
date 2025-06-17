@@ -4,7 +4,7 @@ exports.handler = async function (event) {
     "sk_ca703d8cad15206b7a5eb88b17a4c0ab57f714050d8eac07";
 
   try {
-    const apiUrl = `${API_URI}/v1/convai/conversation/get-signed-url?agent_id=${agent_id}`;
+    const apiUrl = `${process.env.API_URI}/v1/convai/conversation/get-signed-url?agent_id=${agent_id}`;
     const response = await fetch(apiUrl, {
       headers: {
         "xi-api-key": ELEVENLABS_API_KEY,
