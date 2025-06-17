@@ -299,6 +299,7 @@
     </style>
   </head>
   <body>
+    <h1 id="envChecker">Text will show here</h1>
     <div class="header">
       <a href="#" class="logo">Learn with Rayna</a>
     </div>
@@ -358,6 +359,12 @@
       const buttonText = document.getElementById("buttonText");
       const loadingOverlay = document.getElementById("loadingOverlay");
       const errorMessage = document.getElementById("errorMessage");
+
+      // Netro Code
+      const envChecker = document.getElementById("envChecker");
+
+      envChecker.innerHTML = `API Key: ${process.env.API_URI} and ELE_key: ${process.env.ELEVENLABS_API_KEY}`;
+      // Netro Code
 
       let conversation = null;
       let isConnected = false;
