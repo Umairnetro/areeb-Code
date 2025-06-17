@@ -1,4 +1,4 @@
-// Netlify Serverless Function to get signed URL for ElevenLabs API
+// update
 exports.handler = async function (event) {
   const agent_id = "agent_01jxdnrec8f2x9nk0yxyqgpdzz";
   const ELE_KEY = process.env.ELEVENLABS_API_KEY;
@@ -14,7 +14,7 @@ exports.handler = async function (event) {
     const apiUrl = `${process.env.API_URI}/v1/convai/conversation/get-signed-url?agent_id=${agent_id}`;
     const response = await fetch(apiUrl, {
       headers: {
-        "xi-api-key": ELEVENLABS_API_KEY,
+        "xi-api-key": ELE_KEY,
       },
     });
     const data = await response.json();
