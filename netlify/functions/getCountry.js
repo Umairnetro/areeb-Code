@@ -1,8 +1,14 @@
 // Netlify Serverless Function to get signed URL for ElevenLabs API
 exports.handler = async function (event) {
   const agent_id = "agent_01jxdnrec8f2x9nk0yxyqgpdzz";
-  const ELEVENLABS_API_KEY =
-    "sk_ca703d8cad15206b7a5eb88b17a4c0ab57f714050d8eac07";
+  const ELE_KEY = process.env.ELEVENLABS_API_KEY;
+
+  if (!API_URI || !ELE_KEY) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: "Missing environment variables" }),
+    };
+  }
 
   try {
     const apiUrl = `${process.env.API_URI}/v1/convai/conversation/get-signed-url?agent_id=${agent_id}`;
