@@ -6,7 +6,7 @@ exports.handler = async function (event) {
   console.log(ELE_KEY);
 
   try {
-    const apiUrl = `${process.env.API_URI}/v1/convai/conversation/get-signed-url?agent_id=${agent_id}`;
+    const apiUrl = `https://api.elevenlabs.io/v1/convai/conversation/get-signed-url?agent_id=${agent_id}`;
     const response = await fetch(apiUrl, {
       headers: {
         "xi-api-key": ELE_KEY,
